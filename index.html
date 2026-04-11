@@ -744,18 +744,38 @@ footer a:hover { color:var(--accent); }
   <span>Available for full-time roles · Open to relocation</span>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  const toggle = document.getElementById('themeToggle');
-  const html = document.documentElement;
-  const iconMoon = document.getElementById('iconMoon');
-  const iconSun = document.getElementById('iconSun');
 
-  function setTheme(light) {
-    if (light) {
-      html.classList.add('light');
-      iconMoon.style.display = 'none';
-      iconSun.style.display = 'block';
-    } else {
-      html.classList.remove('light');
-      iconMoon.style.display = 'block';
-      iconSun.style.display = 'none';
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var toggle = document.getElementById('themeToggle');
+    var htmlEl = document.documentElement;
+    var iconMoon = document.getElementById('iconMoon');
+    var iconSun = document.getElementById('iconSun');
+
+    function setTheme(light) {
+      if (light) {
+        htmlEl.classList.add('light');
+        iconMoon.style.display = 'none';
+        iconSun.style.display = 'block';
+      } else {
+        htmlEl.classList.remove('light');
+        iconMoon.style.display = 'block';
+        iconSun.style.display = 'none';
+      }
+      try { localStorage.setItem('theme', light ? 'light' : 'dark'); } catch(e) {}
+    }
+
+    try {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'light') setTheme(true);
+    } catch(e) {}
+
+    if (toggle) {
+      toggle.addEventListener('click', function() {
+        setTheme(!htmlEl.classList.contains('light'));
+      });
+    }
+  });
+</script>
+</body>
+</html>
