@@ -6,7 +6,7 @@
 <title>Kabin G V — Thermal & Mechanical Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&family=DM+Mono:wght@700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -22,7 +22,7 @@
   --text3: #555f75;
   --accent: #4f9cf9;
   --accent2: #1a6ef5;
-  --gold: #f5c842;
+  --gold: #22c55e;
   --teal: #2dd4bf;
   --heading: 'Syne', sans-serif;
   --body: 'Inter', sans-serif;
@@ -40,7 +40,7 @@ html.light {
   --text3: #8a93a8;
   --accent: #1a6ef5;
   --accent2: #1058d0;
-  --gold: #c89a00;
+  --gold: #16a34a;
   --teal: #0e9e8a;
 }
 
@@ -64,6 +64,9 @@ html.light .pj { background: var(--surface); }
 html.light .pj.feat { background: linear-gradient(145deg, var(--surface), rgba(26,110,245,0.04)); }
 html.light .now-badge { background: rgba(26,110,245,0.1); border-color: rgba(26,110,245,0.3); }
 html.light .avail { background: rgba(14,158,138,0.07); border-color: rgba(14,158,138,0.25); }
+.hero-badge.intern-badge { background: rgba(34,197,94,0.1); border-color: rgba(34,197,94,0.35); color: #22c55e; }
+.intern-dot { width:6px; height:6px; background:#22c55e; border-radius:50%; animation:blink 2s infinite; display:inline-block; }
+html.light .hero-badge.intern-badge { background: rgba(22,163,74,0.1); border-color: rgba(22,163,74,0.35); color: #15803d; }
 html.light .hero-badge { background: rgba(26,110,245,0.08); border-color: rgba(26,110,245,0.25); }
 
 /* THEME TOGGLE */
@@ -218,10 +221,10 @@ section { padding: 6rem 4rem; }
 .edu-row { display: grid; grid-template-columns: 65px 1fr auto; gap: 1rem; padding: 0.9rem 1.1rem; border-bottom: 1px solid var(--border); align-items: center; transition: background 0.15s; }
 .edu-row:last-child { border-bottom: none; }
 .edu-row:hover { background: var(--surface); }
-.edu-yr { font-family: var(--heading); font-size: 0.85rem; font-weight: 800; color: var(--accent); }
+.edu-yr { font-family: var(--heading); font-size: 0.85rem; font-weight: 800; color: var(--accent); letter-spacing: 0.02em; }
 .edu-deg { font-size: 0.85rem; color: var(--text); font-weight: 500; }
 .edu-inst { font-size: 0.72rem; color: var(--text3); margin-top: 0.1rem; }
-.edu-g { font-family: var(--heading); font-size: 0.9rem; font-weight: 800; color: var(--gold); text-align: right; }
+.edu-g { font-family: var(--heading); font-size: 0.9rem; font-weight: 800; color: var(--gold); text-align: right; letter-spacing: 0.02em; }
 
 /* SKILLS */
 #skills { background: var(--bg); }
@@ -346,8 +349,8 @@ footer a:hover { color:var(--accent); }
       <span class="badge-dot"></span>
       Open to Full-Time Roles from 2026
     </div>
-    <div class="hero-badge" style="margin-bottom:0;background:rgba(245,200,66,0.1);border-color:rgba(245,200,66,0.3);color:var(--gold);">
-      <span style="width:6px;height:6px;background:var(--gold);border-radius:50%;animation:blink 2s infinite;"></span>
+    <div class="hero-badge intern-badge" style="margin-bottom:0;">
+      <span class="intern-dot"></span>
       Currently Interning · Pratt &amp; Whitney
     </div>
   </div>
@@ -398,7 +401,6 @@ footer a:hover { color:var(--accent); }
   </div>
 
   <div class="hero-btns">
-    <a href="#contact" class="btn-p">✉ Hire Me</a>
     <a href="#experience" class="btn-s">View Experience →</a>
   </div>
 
